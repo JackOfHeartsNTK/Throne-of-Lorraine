@@ -1,0 +1,54 @@
+#The Breton Revolt of 1845
+country_event = {
+
+    id = 18455
+    title = "EVTNAME18455"
+    desc = "EVTDESC18455"
+
+    trigger = {
+        tag = FRA
+        BRT = { NOT = { exists = yes } }
+        any_pop = {
+            limit = { has_pop_culture = breton }
+            militancy = 4 
+        }
+        year = 1845
+    }
+
+    fire_only_once = yes
+
+    allow_multiple_instances = no
+
+    mean_time_to_happen = { months = 6 }
+
+    option = {
+        name = "EVT18455OPTA"
+        any_country = {
+            limit = { 
+                  OR = { 
+                       primary_culture = welsh 
+                       primary_culture = breton
+                  }
+             }
+        }
+        relation = { who = THIS value = -100 }
+        420 = {
+            secede_province = BRT
+        }
+        421 = {
+            secede_province = BRT
+        }
+        422 = {
+            secede_province = BRT
+        }
+        423 = {
+            secede_province = BRT
+        }
+        424 = {
+            secede_province = BRT
+        }
+        BRT = { 
+              political_reform = { mandatory_service }
+        }
+    }
+}
